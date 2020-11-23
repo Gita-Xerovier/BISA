@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  constructor() { }
 
-    onFilterUpdate(event: CustomEvent) {
-        console.log(event.detail);
-    }
+  ngOnInit() {
+  }
+
+  onFilterUpdate(event: CustomEvent) {
+    console.log(event.detail);
+  }
+
 }

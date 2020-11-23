@@ -5,20 +5,25 @@ import { MainPage } from './main.page';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/main/tabs/home',
+    pathMatch: 'full'
+  },
+  {
     path: 'tabs',
     component: MainPage,
     children: [
       {
         path: 'scoreboard',
-        loadChildren: () => import('./scoreboard/scoreboard.module').then(m => m.ScoreboardPageModule)
+        loadChildren: () => import('./scoreboard/scoreboard.module').then( m => m.ScoreboardPageModule)
       },
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+        loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
       },
       {
-        path: 'user',
-        loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
       }
     ]
   }
