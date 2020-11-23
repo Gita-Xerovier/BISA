@@ -5,172 +5,180 @@
 </ion-header>
 <ion-content>
   <img src="https://vemaps.com/uploads/img/large/id-04.jpg" alt=""/>
-  <ion-segment (ionChange)="onFilterUpdate($event)" value="all">
-    <ion-segment-button value="belajar">Belajar</ion-segment-button>
+  <ion-segment [(ngModel)]="status">
+    <ion-segment-button color="primary" value="belajar">Belajar</ion-segment-button>
     <ion-segment-button value="latihan">Latihan</ion-segment-button>
   </ion-segment>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-sm="8" offset-sm="2">
-        <!-- Pakaian -->
-        <ion-item lines="none" class="ion-no-padding">
-          Pakaian
-          <ion-button color="secondary" slot="end" class="ion-no-margin">
-            Baca artikel
-          </ion-button>
-        </ion-item>
-        <ion-slides>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Pakaian Adat</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Batik</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Kain Tradisional</p>
-            </div>
-          </ion-slide>
-        </ion-slides>
-        <!-- Rumah Adat -->
-        <ion-item lines="none" class="ion-no-padding">
-          Rumah Adat
-          <ion-button color="secondary" slot="end" class="ion-no-margin">
-            Baca artikel
-          </ion-button>
-        </ion-item>
-        <ion-slides>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sumatera</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Jawa</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Kalimantan</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sulawesi</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Papua</p>
-            </div>
-          </ion-slide>
-        </ion-slides>
+  <div [ngSwitch]="status">
+    <!-- Belajar -->
+    <ion-grid *ngSwitchCase="'belajar'">
+      <ion-row>
+        <ion-col size="12" size-sm="8" offset-sm="2">
+          <!-- Pakaian -->
+          <ion-item lines="none" class="ion-no-padding">
+            Pakaian
+            <ion-button color="secondary" slot="end" class="ion-no-margin">
+              Baca artikel
+            </ion-button>
+          </ion-item>
+          <ion-slides>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Pakaian Adat</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Batik</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Kain Tradisional</p>
+              </div>
+            </ion-slide>
+          </ion-slides>
+          <!-- Rumah Adat -->
+          <ion-item lines="none" class="ion-no-padding">
+            Rumah Adat
+            <ion-button color="secondary" slot="end" class="ion-no-margin">
+              Baca artikel
+            </ion-button>
+          </ion-item>
+          <ion-slides>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sumatera</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Jawa</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Kalimantan</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sulawesi</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Papua</p>
+              </div>
+            </ion-slide>
+          </ion-slides>
 
-        <!-- Makanan Khas Daerah -->
-        <ion-item lines="none" class="ion-no-padding">
-          Makanan Khas Daerah
-          <ion-button color="secondary" slot="end" class="ion-no-margin">
-            Baca artikel
-          </ion-button>
-        </ion-item>
-        <ion-slides>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sumatera</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Jawa</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Kalimantan</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sulawesi</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Papua</p>
-            </div>
-          </ion-slide>
-        </ion-slides>
+          <!-- Makanan Khas Daerah -->
+          <ion-item lines="none" class="ion-no-padding">
+            Makanan Khas Daerah
+            <ion-button color="secondary" slot="end" class="ion-no-margin">
+              Baca artikel
+            </ion-button>
+          </ion-item>
+          <ion-slides>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sumatera</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Jawa</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Kalimantan</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sulawesi</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Papua</p>
+              </div>
+            </ion-slide>
+          </ion-slides>
 
-        <!-- Lagu Daerah -->
-        <ion-item lines="none" class="ion-no-padding">
-          Lagu Daerah
-          <ion-button color="secondary" slot="end" class="ion-no-margin">
-            Baca artikel
-          </ion-button>
-        </ion-item>
-        <ion-slides>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sumatera</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Jawa</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Kalimantan</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Sulawesi</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Papua</p>
-            </div>
-          </ion-slide>
-        </ion-slides>
+          <!-- Lagu Daerah -->
+          <ion-item lines="none" class="ion-no-padding">
+            Lagu Daerah
+            <ion-button color="secondary" slot="end" class="ion-no-margin">
+              Baca artikel
+            </ion-button>
+          </ion-item>
+          <ion-slides>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sumatera</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Jawa</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Kalimantan</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Sulawesi</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Papua</p>
+              </div>
+            </ion-slide>
+          </ion-slides>
 
-        <!-- Peninggalan Sejarah -->
-        <ion-item lines="none" class="ion-no-padding">
-          Peninggalan Sejarah
-          <ion-button color="secondary" slot="end" class="ion-no-margin">
-            Baca artikel
-          </ion-button>
-        </ion-item>
-        <ion-slides>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Candi</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Prasasti</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Alat Musik</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div style="width: 100px; height: 100px;">
-              <p>Senjata</p>
-            </div>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          <!-- Peninggalan Sejarah -->
+          <ion-item lines="none" class="ion-no-padding">
+            Peninggalan Sejarah
+            <ion-button color="secondary" slot="end" class="ion-no-margin">
+              Baca artikel
+            </ion-button>
+          </ion-item>
+          <ion-slides>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Candi</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Prasasti</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Alat Musik</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div style="width: 100px; height: 100px;">
+                <p>Senjata</p>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Latihan -->
+    <ion-grid *ngSwitchCase="'latihan'">
+
+    </ion-grid>
+  </div>
 </ion-content>
