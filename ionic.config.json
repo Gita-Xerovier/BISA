@@ -1,0 +1,7 @@
+{
+  "name": "BISA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
