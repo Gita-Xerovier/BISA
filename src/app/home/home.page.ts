@@ -9,4 +9,7 @@ export class HomePage {
 
   constructor() {}
 
+    onFilterUpdate(event: CustomEvent) {
+        console.log(event.detail);
+    }
 }
