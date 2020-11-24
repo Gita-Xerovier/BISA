@@ -9,11 +9,8 @@ const routes: Routes = [
     component: HomePage
   },
   {
-    path: 'batik',
-    loadChildren: () => import('./batik/batik.module').then( m => m.BatikPageModule)
-  },  {
-    path: 'pakaianadat',
-    loadChildren: () => import('./pakaianadat/pakaianadat.module').then( m => m.PakaianadatPageModule)
+    path: ':items',
+    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
   }
 
 
