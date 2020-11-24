@@ -1,5 +1,5 @@
 export class Batik {
-    id: string;
+    idBatik: string;
     deskripsi: string;
     url: string;
     nama: string;
