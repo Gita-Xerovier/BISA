@@ -1,4 +1,4 @@
-export class Batik {
+export class AlatMusik {
     id: string;
     deskripsi: string;
     linkFoto: string;

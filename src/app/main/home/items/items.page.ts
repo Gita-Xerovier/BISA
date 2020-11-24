@@ -55,5 +55,25 @@ export class ItemsPage implements OnInit {
         console.log(data);
       });
     }
+    else if (this.path === 'Alat Musik') {
+      this.itemSrv.getAllAlatMusik().snapshotChanges().pipe(
+          map( changes =>
+              changes.map(c => ({id: c.key, ...c.payload.val()}))
+          )
+      ).subscribe(data => {
+        this.item = data;
+        console.log(data);
+      });
+    }
+    else if (this.path === 'Candi') {
+      this.itemSrv.getAllCandi().snapshotChanges().pipe(
+          map( changes =>
+              changes.map(c => ({id: c.key, ...c.payload.val()}))
+          )
+      ).subscribe(data => {
+        this.item = data;
+        console.log(data);
+      });
+    }
   }
 }
