@@ -75,5 +75,25 @@ export class ItemsPage implements OnInit {
         console.log(data);
       });
     }
+    else if (this.path === 'Prasasti') {
+      this.itemSrv.getAllPrasasti().snapshotChanges().pipe(
+          map( changes =>
+              changes.map(c => ({id: c.key, ...c.payload.val()}))
+          )
+      ).subscribe(data => {
+        this.item = data;
+        console.log(data);
+      });
+    }
+    else if (this.path === 'Senjata') {
+      this.itemSrv.getAllSenjata().snapshotChanges().pipe(
+          map( changes =>
+              changes.map(c => ({id: c.key, ...c.payload.val()}))
+          )
+      ).subscribe(data => {
+        this.item = data;
+        console.log(data);
+      });
+    }
   }
 }

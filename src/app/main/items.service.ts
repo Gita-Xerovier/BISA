@@ -30,12 +30,22 @@ export class ItemsService {
   private dbPathCandi = '/candi';
   candiRef: AngularFireList<Item> = null;
 
+  // Initialize prasasti
+  private dbPathPrasasti = '/prasasti';
+  prasastiRef: AngularFireList<Item> = null;
+
+  // Initialize senjata
+  private dbPathSenjata = '/senjata_tradisional';
+  senjataRef: AngularFireList<Item> = null;
+
   constructor(private db: AngularFireDatabase) {
     this.batikRef = db.list(this.dbPathBatik);
     this.pakaianRef = db.list(this.dbPathPakaian);
     this.kainRef = db.list(this.dbPathKain);
     this.alatMusikRef = db.list(this.dbPathAlatMusik);
     this.candiRef = db.list(this.dbPathCandi);
+    this.prasastiRef = db.list(this.dbPathPrasasti);
+    this.senjataRef = db.list(this.dbPathSenjata);
   }
   getAllBatik(): AngularFireList<Item> {
     return this.batikRef;
@@ -51,5 +61,11 @@ export class ItemsService {
   }
   getAllCandi(): AngularFireList<Item> {
     return this.candiRef;
+  }
+  getAllPrasasti(): AngularFireList<Item> {
+    return this.prasastiRef;
+  }
+  getAllSenjata(): AngularFireList<Item> {
+    return this.senjataRef;
   }
 }
