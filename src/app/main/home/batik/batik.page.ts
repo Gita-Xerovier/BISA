@@ -19,7 +19,7 @@ export class BatikPage implements OnInit {
   ionViewWillEnter() {
     this.itemSrv.getAllBatik().snapshotChanges().pipe(
         map( changes =>
-            changes.map(c => ({...c.payload.val}))
+            changes.map(c => ({id: c.key, ...c.payload.val()}))
         )
     ).subscribe(data => {
       this.batik = data;
