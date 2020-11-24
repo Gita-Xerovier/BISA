@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemsService} from '../../items.service';
-import {map} from 'rxjs/operators';
+import {map} from "rxjs/operators";
 
 @Component({
-  selector: 'app-batik',
-  templateUrl: './batik.page.html',
-  styleUrls: ['./batik.page.scss'],
+  selector: 'app-pakaianadat',
+  templateUrl: './pakaianadat.page.html',
+  styleUrls: ['./pakaianadat.page.scss'],
 })
-export class BatikPage implements OnInit {
+export class PakaianadatPage implements OnInit {
   item: any;
   constructor(
       private itemSrv: ItemsService
@@ -17,7 +17,7 @@ export class BatikPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.itemSrv.getAllBatik().snapshotChanges().pipe(
+    this.itemSrv.getAllPakaian().snapshotChanges().pipe(
         map( changes =>
             changes.map(c => ({id: c.key, ...c.payload.val()}))
         )

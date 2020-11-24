@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'batik',
     loadChildren: () => import('./batik/batik.module').then( m => m.BatikPageModule)
+  },  {
+    path: 'pakaianadat',
+    loadChildren: () => import('./pakaianadat/pakaianadat.module').then( m => m.PakaianadatPageModule)
   }
+
 
 
 ];
